@@ -744,7 +744,12 @@ module RCS
 		def export(opts={})
 			xbranch = self.branch || 'master'
 			xauthor = username_to_author(self.author, opts)
-			xlog = self.log.join
+			log_enc = opts[:log_encoding]
+			if log_enc
+                          xlog = self.log.join.encode('UTF-8', log_enc).force_encoding('ASCII-8BIT')
+                        else
+			  xlog = self.log.join
+                        end
 			numdate = self.date.tv_sec
 			xdate = "#{numdate} +0000"
 			key = numdate.to_s
