@@ -1,4 +1,4 @@
-#!/usr/bin/ruby
+#!env ruby
 
 =begin
 RCS fast export: run the script with the `--help` option for further
