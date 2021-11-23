@@ -1,0 +1,10 @@
+# README
+
+Usage:
+
+$ git init .
+$ git checkout -b master
+$ rcs-fast-export.rb --log-encoding=cp932 . | git fast-import
+$ git reset --hard
+
+# end of file
